@@ -1,0 +1,9 @@
+language: ruby
+services:
+  - docker
+script:
+  - docker build -t dockerimageorg/lamp-packages .
+  - docker login -u ${username} -p ${password}
+  - docker push dockerimageorg/lamp-packages:build-${TRAVIS_BUILD_ID}
+env:
+  - username=a2564011261
