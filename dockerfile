@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 RUN apt-get update
 RUN echo "y" | apt-get install wget
-RUN apt-get install tree
+RUN echo "y" | apt-get install tree
 RUN wget --version
 RUN cd /usr/bin/ && mkdir php5.4
 WORKDIR /usr/bin/php5.4/
