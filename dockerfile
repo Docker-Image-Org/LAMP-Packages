@@ -15,5 +15,7 @@ RUN ./configure
 RUN make
 RUN make install
 RUN php -v
+RUN service httpd start
+RUN command
 EXPOSE 80
 EXPOSE 9000
