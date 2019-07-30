@@ -15,6 +15,7 @@ RUN ./configure
 RUN make
 RUN make install
 RUN php -v
-RUN service httpd start
+RUN apache2 -version
+RUN systemctl status apache2
 EXPOSE 80
 EXPOSE 9000
