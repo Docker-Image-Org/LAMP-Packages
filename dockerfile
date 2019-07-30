@@ -16,6 +16,6 @@ RUN make
 RUN make install
 RUN php -v
 RUN apache2 -version
-RUN systemctl status apache2
+CMD [ "/usr/sbin/init","systemctl status apache2"]
 EXPOSE 80
 EXPOSE 9000
