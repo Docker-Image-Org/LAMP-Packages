@@ -3,6 +3,7 @@ services:
   - docker
 script:
   - docker build -t dockerimageorg/lamp-packages:build-${TRAVIS_JOB_NUMBER} .
+  - docker run --name lamp-packages -i -t dockerimageorg/lamp-packages:build-${TRAVIS_JOB_NUMBER}
   - docker login -u ${username} -p ${password}
   - docker tag dockerimageorg/lamp-packages:build-${TRAVIS_JOB_NUMBER} dockerimageorg/lamp-packages:build-${TRAVIS_JOB_NUMBER}
   - docker push dockerimageorg/lamp-packages:build-${TRAVIS_JOB_NUMBER}
