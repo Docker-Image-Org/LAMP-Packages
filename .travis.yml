@@ -8,3 +8,9 @@ script:
   - docker push dockerimageorg/lamp-packages:build-${TRAVIS_JOB_NUMBER}
 env:
   - username=a2564011261
+notifications:
+  email:
+    recipients:
+      - A2564011261@163.com
+    on_success: always # default: change
+    on_failure: always # default: always
