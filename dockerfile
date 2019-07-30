@@ -1,4 +1,4 @@
-FROM local/c7-systemd
+FROM centos:latest
 RUN yum -y install httpd; yum clean all; systemctl enable httpd.service
 RUN cd /usr/bin/ && mkdir php5.4
 WORKDIR /usr/bin/php5.4/
